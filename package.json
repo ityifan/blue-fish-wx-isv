@@ -1,0 +1,41 @@
+{
+  "name": "blue-fish-wx-isv",
+  "version": "1.0.0",
+  "description": "一个轻量的微信SDK服务商版 for Node.js(修复漏洞版)",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc -w",
+    "build": "rm -rf dist && tsc && cp package.json *.md dist && rm -rf dist/test",
+    "lint": "eslint . ",
+    "prettier": "prettier -w .",
+    "play": "node dist/test/play",
+    "sync": "curl -X PUT https://npmmirror.com/sync/blue-fish-wx-isv?sync_upstream=true"
+  },
+  "homepage": "https://github.com/ityifan/blue-fish-wx-isv",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ityifan/blue-fish-wx-isv.git"
+  },
+  "dependencies": {
+    "blue-fish-helper": "^1.0.2",
+    "coa-echo": "^1.2.1",
+    "coa-error": "^1.5.2",
+    "coa-xml": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.9.6",
+    "@typescript-eslint/eslint-plugin": "^4.31.2",
+    "@typescript-eslint/parser": "^4.31.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.3"
+  },
+  "keywords": [
+    "wx",
+    "isv",
+    "blue-fish"
+  ],
+  "author": "Leon",
+  "license": "MIT"
+}
