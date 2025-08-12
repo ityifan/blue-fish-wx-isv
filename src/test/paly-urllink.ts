@@ -5,6 +5,7 @@ export default async () => {
     appId: 'wxe4fe827fc87f0000',
     appSecret: '04277da11000000000000000ddc25c063',
     appToken: 'B0D791C6AAAAAAAAAAAAAAAA874DFEDEC8',
+    appKey: '',
     wxSmConfig: {
       appId: '',
       secret: '',
