@@ -93,6 +93,7 @@ const wxIsvConfig = {
   appId: '',
   appSecret: '',
   appToken: '',
+  appKey: '',
   wxSmConfig: {
     appId: '',
     secret: '',
