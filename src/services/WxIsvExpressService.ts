@@ -186,6 +186,58 @@ export class WxIsvExpressService extends WxIsvServiceBase {
     )) as WxIsv.WxIsvNormalResponse
   }
 
+  // 传运单。商户向微信提供某交易单号对应的运单号，微信后台会跟踪运单状态。 https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/delivery/open_msg.html#传运单接口
+  async traceWaybill(
+    accessToken: string,
+    data: WxIsv.WxIsvOpenMsgTraceWaybillParam
+  ) {
+    const param = $.snakeCaseKeys(data) as Record<string, any>
+    return (await this.request(
+      'POST',
+      '/cgi-bin/express/delivery/open_msg/trace_waybill',
+      param,
+      { access_token: accessToken }
+    )) as WxIsv.WxIsvOpenMsgTraceWaybillResponse
+  }
+
+  // 查询运单。在调用 trace_waybill 后，可使用本接口查询对应运单详情。 https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/delivery/open_msg.html#查询运单接口
+  async queryTrace(
+    accessToken: string,
+    data: WxIsv.WxIsvOpenMsgQueryTraceParam
+  ) {
+    const param = $.snakeCaseKeys(data)
+    return (await this.request(
+      'POST',
+      '/cgi-bin/express/delivery/open_msg/query_trace',
+      param,
+      { access_token: accessToken }
+    )) as WxIsv.WxIsvOpenMsgQueryTraceResponse
+  }
+
+  // 获取运力 id 列表。 https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/delivery/open_msg.html#获取运力id列表
+  async getDeliveryList(accessToken: string) {
+    return (await this.request(
+      'POST',
+      '/cgi-bin/express/delivery/open_msg/get_delivery_list',
+      {},
+      { access_token: accessToken }
+    )) as WxIsv.WxIsvOpenMsgGetDeliveryListResponse
+  }
+
+  // 更新物品信息。 https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/delivery/open_msg.html#更新物流信息接口
+  async updateWaybillGoods(
+    accessToken: string,
+    data: WxIsv.WxIsvOpenMsgUpdateWaybillGoodsParam
+  ) {
+    const param = $.snakeCaseKeys(data) as Record<string, any>
+    return (await this.request(
+      'POST',
+      '/cgi-bin/express/delivery/open_msg/update_waybill_goods',
+      param,
+      { access_token: accessToken }
+    )) as WxIsv.WxIsvNormalResponse
+  }
+
   protected customErrorHandler(res: WxIsv.AxiosResponse) {
     const data = res.data || {}
     const errorCode = _.toNumber(data.errcode) || 0

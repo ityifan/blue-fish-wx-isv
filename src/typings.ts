@@ -473,6 +473,76 @@ const wxIsvRawDeliveryErrorResponse = {
   deliveryResultmsg: '客户密码不正确',
 }
 
+// 传运单 open_msg 相关类型
+const wxIsvOpenMsgGoodsDetailItem = {
+  goodsName: '测试名字',
+  goodsImgUrl: 'www.qq.com',
+  goodsDesc: '商品详情描述',
+}
+
+const wxIsvOpenMsgTraceWaybillParam = {
+  openid: 'ovtZW4yB7DIj3CxOb6ii-nk4HhFo',
+  waybillId: 'WXTESTEXPRESS0000014',
+  senderPhone: '12345678901',
+  receiverPhone: '123456566',
+  deliveryId: 'KYSY',
+  transId: '4200000000000000000000000000',
+  orderDetailPath: '',
+  goodsInfo: {
+    detailList: [wxIsvOpenMsgGoodsDetailItem],
+  },
+}
+
+const wxIsvOpenMsgTraceWaybillResponse = {
+  errcode: 0,
+  errmsg: 'ok',
+  waybillToken: 'o_ARWHaxIxzWHmdui-AIw9KBr8qNnbmc08V0KhDyXE-IMLo6AcOqJkPsNLcLzfTb',
+}
+
+const wxIsvOpenMsgQueryTraceParam = {
+  waybillToken: 'o_ARWHaxIxzWHmdui-AIw8SuE1QtaUZK8aUnZguAn1nsZ72ZjWlq8btV8j-wAc94',
+  openid: 'ovtZW4yB7DIj3CxOb6ii-nk4HhFo',
+}
+
+const wxIsvOpenMsgQueryTraceResponse = {
+  errcode: 0,
+  errmsg: 'ok',
+  waybillInfo: {
+    status: 0,
+    waybillId: 'WXTESTEXPRESS0000014',
+  },
+  shopInfo: {
+    goodsInfo: {
+      detailList: [
+        { goodsName: '测试名字', goodsImgUrl: 'www.qq.com' },
+        { goodsName: '测试名字2', goodsImgUrl: 'www.qq.com' },
+      ],
+    },
+  },
+  deliveryInfo: {
+    deliveryId: 'KYSY',
+    deliveryName: '运力公司名称',
+  },
+}
+
+const wxIsvOpenMsgGetDeliveryListResponse = {
+  errcode: 0,
+  deliveryList: [
+    { deliveryId: '(AU)', deliveryName: 'Interparcel' },
+    { deliveryId: 'BDT', deliveryName: '八达通' },
+    { deliveryId: 'YD', deliveryName: '韵达速递' },
+  ],
+  count: 1379,
+}
+
+const wxIsvOpenMsgUpdateWaybillGoodsParam = {
+  waybillToken: 'o_ARWHaxIxzWHmdui-AIw8SuE1QtaUZK8aUnZguAn1nsZ72ZjWlq8btV8j-wAc94',
+  openid: 'ovtZW4yB7DIj3CxOb6ii-nk4HhFo',
+  goodsInfo: {
+    detailList: [{ goodsName: '测试更新商品', goodsImgUrl: 'www.qq.com' }],
+  },
+}
+
 const wxIsvAddTemplateResponse = {
   errmsg: 'ok',
   errcode: 0,
@@ -725,6 +795,12 @@ export declare namespace WxIsv {
   type WxIsvGetQuoatResponse = typeof wxIsvGetQuoatResponse
   type WxIsvAddOrderResponse = typeof wxIsvAddOrderResponse
   type WxIsvRawDeliveryErrorResponse = typeof wxIsvRawDeliveryErrorResponse
+  type WxIsvOpenMsgTraceWaybillParam = typeof wxIsvOpenMsgTraceWaybillParam
+  type WxIsvOpenMsgTraceWaybillResponse = typeof wxIsvOpenMsgTraceWaybillResponse
+  type WxIsvOpenMsgQueryTraceParam = typeof wxIsvOpenMsgQueryTraceParam
+  type WxIsvOpenMsgQueryTraceResponse = typeof wxIsvOpenMsgQueryTraceResponse
+  type WxIsvOpenMsgGetDeliveryListResponse = typeof wxIsvOpenMsgGetDeliveryListResponse
+  type WxIsvOpenMsgUpdateWaybillGoodsParam = typeof wxIsvOpenMsgUpdateWaybillGoodsParam
   type WxIsvAddTemplateResponse = typeof wxIsvAddTemplateResponse
   type WxIsvTmplKeywordResponse = typeof wxIsvTmplKeywordResponse
   type WxIsvTicket = typeof wxIsvTicketResponse
