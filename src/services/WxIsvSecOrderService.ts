@@ -14,6 +14,7 @@ export class WxIsvSecOrderService extends WxIsvServiceBase {
       deliveryMode: number
       logisticsType: number
       shippingList: Array<Record<any, any>>
+      isAllDelivered?: boolean
       uploadTime: string
       payer: Record<any, any>
     }
