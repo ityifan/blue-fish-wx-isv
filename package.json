@@ -1,6 +1,6 @@
 {
   "name": "blue-fish-wx-isv",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "一个轻量的微信SDK服务商版 for Node.js(修复漏洞版)",
   "main": "index.js",
   "scripts": {

@@ -769,6 +769,10 @@ export declare namespace WxIsv {
   type WxIsvStatVisitTrend = typeof wxIsvStatVisitTrend
   type WxIsvStatDailySummary = typeof wxIsvStatDailySummary
   type WxIsvStatDailyRetain = typeof wxIsvStatDailyRetain
+  type WxIsvStatWeeklyRetain = typeof wxIsvStatDailyRetain
+  type WxIsvStatMonthlyRetain = typeof wxIsvStatDailyRetain
+  type WxIsvStatMonthlyVisitTrend = typeof wxIsvStatVisitTrend
+  type WxIsvStatWeeklyVisitTrend = typeof wxIsvStatVisitTrend
   type WxIsvNormalResponse = typeof wxIsvNormalResponse
   type WxIsvReleasePageList = typeof wxIsvReleasePageList
   type WxIsvReleaseAuditSubmit = typeof wxIsvReleaseAuditSubmit
