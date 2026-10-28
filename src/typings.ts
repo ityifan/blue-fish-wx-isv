@@ -612,7 +612,10 @@ const wxIsvComplainResponse = {
     productName: 'sdf', //商品名称
     payTime: 1658903465,    //支付时间
     totalCost: "￥0.01",    //交易金额
-    expireTime: 1658903564 //投诉单当前状态到期时间,0为不存在
+    expireTime: 1658903564, //投诉单当前状态到期时间,0为不存在
+    headImgUrl: '', //头像URL
+    nickName: '', //微信昵称
+    appealState: 0 //申诉状态
   },
   // 投诉进度
   item: [{
@@ -620,7 +623,10 @@ const wxIsvComplainResponse = {
     time: 1658903527,  //时间
     phoneNumber: 13599125777, //手机号
     content: '', //内容
-    mediaIdList: ['https://asdfasdf']  //图片 cdn 列表
+    mediaIdList: ['https://asdfasdf'], //图片 cdn 列表
+    blameResult: 0, //itemType 为 31、32 时，1：待用户退货中，0：待上传处理凭证
+    nickName: '', //操作者昵称
+    appealItemType: 0 //处于申诉阶段节点的申诉状态
   }],
   returnBill: {
     returnId: '23234234234',    //退货id
